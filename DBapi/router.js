@@ -6,7 +6,7 @@ const { create } = require('domain');
 
 
 
-const client = new OAuth2Client("897864354621-vvt81q5givurte9tmj6nml8jkgkq2i64.apps.googleusercontent.com");
+const client = new OAuth2Client("897864354621-rqs8e9er3647tn3g6d2n0ecmulfkn28f.apps.googleusercontent.com");
 const router = express.Router()
 let db
 
@@ -17,7 +17,7 @@ Database.open(path.join(__dirname, 'database', 'database.db')).then(newDB => db 
 async function verify(token) {
     const ticket = await client.verifyIdToken({
         idToken: token,
-        audience: "897864354621-vvt81q5givurte9tmj6nml8jkgkq2i64.apps.googleusercontent.com",
+        audience: "897864354621-rqs8e9er3647tn3g6d2n0ecmulfkn28f.apps.googleusercontent.com",
     });
     const payload = ticket.getPayload();
     return {
